@@ -4,7 +4,7 @@ const userDataSchema = new Schema(
     {
         gender: {
             type: String,
-            enum: ['Male', 'Female', 'Other'],
+            enum: ['Male', 'Female'],
             required: true
         },
         cityYouLiveIn: {
@@ -14,12 +14,9 @@ const userDataSchema = new Schema(
         purposeOfLoan: {
             type: String,
             enum: [
-                'Home Improvement',
-                'Debt Consolidation',
-                'Medical Expenses',
-                'Education',
-                'Business',
-                'Other'
+                'Transfer My Existing Loan',
+                'Commercial/Project Loan',
+                'Residential Home Loan'
             ],
             required: true
         },
@@ -29,7 +26,7 @@ const userDataSchema = new Schema(
         },
         employmentType: {
             type: String,
-            enum: ['Employed', 'Self-Employed', 'Unemployed', 'Student', 'Retired'],
+            enum: ['Self Employed Business','Self Employed Professional','Salaried'],
             required: true
         },
         monthlyIncome: {
@@ -50,17 +47,17 @@ const userDataSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            match: /.+\@.+\..+/  // Basic email format validation
+            match: /.+\@.+\..+/
         },
         mobile: {
             type: String,
             required: true,
-            match: /^\d{10}$/  // Assuming a 10-digit mobile number
+            match: /^\d{10}$/
         }
     },
     {
-        timestamps: true  // Automatically manage createdAt and updatedAt fields
+        timestamps: true
     }
 )
 
-export const Users = mongoose.model("Users", userDataSchema) 
+export const User = mongoose.model("User", userDataSchema) 

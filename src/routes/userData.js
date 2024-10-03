@@ -3,6 +3,7 @@ const router = express.Router();
 
 import { create } from "../controllers/userData.controller.js";
 
-router.post("/userData", create);
+// Create a new user data
+router.post("/addUserData", create);
 
 export default router;
