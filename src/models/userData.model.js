@@ -5,7 +5,7 @@ const userDataSchema = new Schema(
         gender: {
             type: String,
             enum: ['Male', 'Female'],
-            required: true
+            // required: true
         },
         cityYouLiveIn: {
             type: String,
@@ -18,16 +18,16 @@ const userDataSchema = new Schema(
                 'Commercial/Project Loan',
                 'Residential Home Loan'
             ],
-            required: true
+            // required: true
         },
         cityWherePropertyIsLocated: {
             type: String,
-            required: true
+            // required: true
         },
         employmentType: {
             type: String,
             enum: ['Self Employed Business','Self Employed Professional','Salaried'],
-            required: true
+            // required: true
         },
         monthlyIncome: {
             type: Number,
@@ -45,7 +45,7 @@ const userDataSchema = new Schema(
         },
         email: {
             type: String,
-            required: true,
+            // required: true,
             unique: true,
             match: /.+\@.+\..+/
         },
